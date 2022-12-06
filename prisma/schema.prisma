@@ -1,0 +1,33 @@
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String @unique @default(uuid())
+  firstname String
+  lastname  String
+  books     Book[]
+}
+
+model Book {
+  id           String     @unique @default(uuid())
+  name         String
+  isAvailable  Boolean
+  author       User       @relation(fields: [authorId], references: [id])
+  authorId     String
+  collection   Collection @relation(fields: [collectionId], references: [id])
+  collectionId String
+}
+
+model Collection {
+  id    String @unique @default(uuid())
+  name  String
+  books Book[]
+}

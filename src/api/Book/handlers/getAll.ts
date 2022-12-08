@@ -1,5 +1,5 @@
-import { prisma } from "@prisma/client";
-import { BookHandlers } from "./../interface";
+import prisma from "../../../../prisma/client";
+import { BookHandlers } from "../interface";
 
 const getAllBooks: BookHandlers["getAll"] = async (req, res) => {
   try {

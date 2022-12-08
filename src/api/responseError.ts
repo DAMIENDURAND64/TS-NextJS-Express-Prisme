@@ -1,5 +1,5 @@
 type ResponseError = {
-  message: String | unknown;
+  message: string | unknown;
 };
 
 export default ResponseError;

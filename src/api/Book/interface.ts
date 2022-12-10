@@ -15,8 +15,12 @@ type BookBodyUpdate = {
   isAvailable: boolean;
 };
 
+type GetAllQueryParams = {
+  author: "true" | undefined;
+};
+
 export interface BookHandlers {
-  getAll: RequestHandler<null, Book[] | ResponseError, null>;
+  getAll: RequestHandler<null, Book[] | ResponseError, null, GetAllQueryParams>;
   getOne: RequestHandler<{ id: string }, Book | ResponseError, null>;
   create: RequestHandler<null, Book | ResponseError, BookBodyCreate>;
   delete: RequestHandler<{ id: string }, Book | ResponseError, null>;

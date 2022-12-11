@@ -17,6 +17,7 @@ type BookBodyUpdate = {
 
 type GetAllQueryParams = {
   author: "true" | undefined;
+  collection: "true" | undefined;
 };
 
 export interface BookHandlers {

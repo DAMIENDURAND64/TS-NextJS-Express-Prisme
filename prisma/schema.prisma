@@ -31,3 +31,9 @@ model Collection {
   name  String
   books Book[]
 }
+
+model Customer {
+  id        String     @unique @default(uuid())
+  email     String     @unique
+  password  String     
+}

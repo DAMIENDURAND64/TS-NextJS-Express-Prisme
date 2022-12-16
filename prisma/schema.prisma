@@ -12,6 +12,7 @@ datasource db {
 model User {
   id        String @unique @default(uuid())
   firstname String
+  password  String
   lastname  String
   books     Book[]
 }

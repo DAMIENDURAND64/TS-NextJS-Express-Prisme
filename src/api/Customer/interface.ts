@@ -10,11 +10,10 @@ type TCustomerCreate = {
 export interface ICustomerHandlers {
   getAll: RequestHandler<null, Customer[] | ResponseError, null>;
   getOne: RequestHandler<{ id: string }, Customer | ResponseError, null>;
-  create: RequestHandler<null, Customer | ResponseError, TCustomerCreate>;
   update: RequestHandler<
     { id: string },
     Customer | ResponseError,
     TCustomerCreate
   >;
-  delete: RequestHandler<{ id: string }, null | ResponseError, null>;
+  delete: RequestHandler<{ id: string }, Customer | ResponseError, null>;
 }
